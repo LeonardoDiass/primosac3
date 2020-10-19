@@ -7,7 +7,8 @@ app = Flask(__name__)
 @app.route('/')
 def primos():
     primos = []
-    for i in range(1, 101):
+    i = 1
+    while len(primos) < 100:
         x = 2
         while x < i:
             if i % x == 0:
@@ -15,6 +16,7 @@ def primos():
             x += 1
         if x == i:
             primos.append(i)
+        i += 1
     return str(primos)
 
 
